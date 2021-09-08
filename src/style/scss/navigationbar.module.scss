@@ -1,0 +1,17 @@
+
+.ColorNav{
+  background-color: rgba(0, 0, 0, 0.13);
+  padding: 0 !important;
+  font-size: 0.9em !important;
+  .RemoveCaret {
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.19);
+      border-radius: 0.2em;
+    }
+    a:first-child::after{
+      display: none !important;
+    }
+    a:not(:first-child) {
+    }
+  }
+}

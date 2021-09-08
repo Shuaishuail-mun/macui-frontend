@@ -1,0 +1,9 @@
+$blur-degree:5px;
+.dropdown-menu-dark {
+  background-color: rgba(0, 0, 0, 0.4) !important;
+}
+.dropdown-menu {
+  backdrop-filter: blur($blur-degree);
+  -webkit-backdrop-filter: blur($blur-degree);
+}
+@import '~bootstrap/scss/bootstrap.scss';

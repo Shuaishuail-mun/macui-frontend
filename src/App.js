@@ -1,24 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {createContext} from "react";
+import StartingUp from "./components/StartingUp";
+import HomePage from "./components/HomePage";
+import {useAuth} from "./components/login/Auth";
+import PrivateRoute from './components/login/PrivateRoute';
+import {
+    Switch,
+    Route, BrowserRouter as Router, Redirect
+} from "react-router-dom";
 
 function App() {
+    let auth = useAuth();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <Router>
+          <Redirect to={{pathname: auth.user ? "/home" : "/login"}}/>
+          <Switch>
+              <Route path="/login">
+                  <StartingUp/>
+              </Route>
+              <PrivateRoute path="/home">
+                  <HomePage/>
+              </PrivateRoute>
+          </Switch>
+      </Router>
   );
 }
 
