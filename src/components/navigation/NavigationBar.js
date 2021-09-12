@@ -12,7 +12,7 @@ function Navigation() {
 
     return (
         <div>
-            <Navbar variant="dark" className={style.ColorNav} expand="lg">
+            <Navbar variant="light" className={style.ColorNav} expand="lg">
                 <Container fluid>
                     <Navbar.Brand>
                         <FontAwesomeIcon icon={faApple}/>
@@ -23,7 +23,7 @@ function Navigation() {
                                 id="nav-dropdown-start"
                                 title="Dropdown"
                                 className={style.RemoveCaret}
-                                menuVariant="dark">
+                                menuVariant="light">
                                 <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
                                 <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
                                 <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
@@ -36,7 +36,7 @@ function Navigation() {
                                 id="nav-dropdown-profiles"
                                 title="Dropdown"
                                 className={style.RemoveCaret}
-                                menuVariant="dark">
+                                menuVariant="light">
                                 <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
                                 <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
                                 <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>

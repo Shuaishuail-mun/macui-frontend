@@ -7,16 +7,6 @@
 }
 
 .Finder {
-  z-index: 10;
-  left: 10%;
-  top: 15%;
-  min-width: 700px;
-  min-height: 500px;
-  background: white;
-  border-radius: 10px 10px;
-  position: absolute;
-  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.3);
-  overflow:hidden;
   .TopBar{
     border-top: white solid 1px;
     background: linear-gradient(#F8F8F8, #E1E1E1);

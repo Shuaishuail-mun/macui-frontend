@@ -3,8 +3,72 @@
   background-size:cover;
   width: 100%;
   height: 100vh;
+  position: relative;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  overflow: hidden;
+  %AppWindow {
+    background: white;
+    border-radius: 10px 10px;
+    position: absolute;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.3);
+    overflow:hidden;
+  }
+  .Finder{
+    @extend %AppWindow;
+    left: 10%;
+    top: 15%;
+    min-width: 700px;
+    min-height: 500px;
+  }
+  .Mail{
+    @extend %AppWindow;
+    left: 12%;
+    top: 14%;
+    min-width: 800px;
+    min-height: 500px;
+  }
+  .Music{
+    @extend %AppWindow;
+    left: 14%;
+    top: 13%;
+    min-width: 600px;
+    min-height: 550px;
+  }
+  .Photo{
+    @extend %AppWindow;
+    left: 16%;
+    top: 10%;
+    min-width: 700px;
+    min-height: 550px;
+  }
+  .PhotoShop{
+    @extend %AppWindow;
+    left: 11%;
+    top: 10%;
+    min-width: 800px;
+    min-height: 600px;
+  }
+  .Terminal{
+    @extend %AppWindow;
+    left: 15%;
+    top: 15%;
+    min-width: 500px;
+    min-height: 400px;
+  }
+  .Twitter{
+    @extend %AppWindow;
+    left: 16%;
+    top: 16%;
+    min-width: 600px;
+    min-height: 400px;
+  }
+  .OnTop {
+    z-index: 11;
+  }
+  .OnBottom{
+    z-index: 10;
+  }
 }
