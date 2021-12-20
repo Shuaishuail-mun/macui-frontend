@@ -7,12 +7,13 @@
 }
 
 .Finder {
+  height: 100%;
   .TopBar{
     border-top: white solid 1px;
     background: linear-gradient(#F8F8F8, #E1E1E1);
     border-radius: 5px 5px 0px 0px;
     border-bottom: rgba(0, 0, 0, 0.3) solid 0.5px;
-    min-height:30px;
+    height:30px;
     .WindowBtns{
       color: transparent;
       &:hover{
@@ -32,30 +33,36 @@
       }
     }
   }
-  .Content{
-    min-height: 470px;
-    .SideBar{
-      background-color: rgba(217, 216, 216, 0.3);
-      font-size: 0.9em;
-      span{
-        font-weight: bold;
-        opacity: 0.6;
-        font-size: 0.8em;
-      }
-      .List{
-        .Item{
-          margin: 5px 10px 5px 10px;
-          padding: 5px;
-          border: none;
-          background-color: transparent;
-          svg{
-            color:dodgerblue;
-          }
-          &:focus{
-            border-radius: 5px;
-            background-color: rgba(203, 203, 203, 0.37);
+  .FinderContent{
+    height: calc(100% - 30px);
+    .Content{
+      height: 100%;
+      .SideBar{
+        background-color: rgba(217, 216, 216, 0.3);
+        font-size: 0.9em;
+        span{
+          font-weight: bold;
+          opacity: 0.6;
+          font-size: 0.8em;
+        }
+        .List{
+          .Item{
+            margin: 5px 10px 5px 10px;
+            padding: 5px;
+            border: none;
+            background-color: transparent;
+            svg{
+              color:dodgerblue;
+            }
+            &:focus{
+              border-radius: 5px;
+              background-color: rgba(203, 203, 203, 0.37);
+            }
           }
         }
+      }
+      .Pane{
+        overflow: auto;
       }
     }
   }

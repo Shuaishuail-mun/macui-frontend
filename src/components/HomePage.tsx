@@ -13,7 +13,9 @@ import {useState} from "react";
 
 interface Config{
     open: boolean,
-    onTop: boolean
+    onTop: boolean,
+    minimize: boolean,
+    maximize: boolean
 }
 interface AppConfig {
     [key:string]:Config
@@ -33,31 +35,45 @@ function HomePage() {
     const [appConfig, setAppConfig] = useState({
         finder: {
             open: false,
-            onTop: false
+            onTop: false,
+            minimize: false,
+            maximize: false
         },
         mail: {
             open: false,
-            onTop: false
+            onTop: false,
+            minimize: false,
+            maximize: false
         },
         music: {
             open: false,
-            onTop: false
+            onTop: false,
+            minimize: false,
+            maximize: false
         },
         photo: {
             open: false,
-            onTop: false
+            onTop: false,
+            minimize: false,
+            maximize: false
         },
         ps: {
             open: false,
-            onTop: false
+            onTop: false,
+            minimize: false,
+            maximize: false
         },
         terminal: {
             open: false,
-            onTop: false
+            onTop: false,
+            minimize: false,
+            maximize: false
         },
         twitter: {
             open: false,
-            onTop: false
+            onTop: false,
+            minimize: false,
+            maximize: false
         },
     } as AppConfig);
 
@@ -76,10 +92,52 @@ function HomePage() {
         setAppConfig({
             ...newAppConfig,
             [App]: {
+                ...newAppConfig[App],
                 open: true,
-                onTop: true
+                onTop: true,
+                minimize: false
             }
-        })
+        });
+    }
+
+    function closeApp(App:Apps) {
+        setAppConfig({
+            ...appConfig,
+            [App]: {
+                open: false,
+                onTop: false,
+                minimize: false,
+                maximize: false
+            }
+        });
+    }
+
+    function minimizeApp(App:Apps){
+        setAppConfig({
+            ...appConfig,
+            [App]: {
+                open: true,
+                onTop: true,
+                minimize: true,
+                maximize: false
+            }
+        });
+    }
+
+    function maximizeApp(App:Apps){
+        let max = true;
+        if(appConfig[App].maximize) {
+            max = false;
+        }
+        setAppConfig({
+            ...appConfig,
+            [App]: {
+                open: true,
+                onTop: true,
+                minimize: false,
+                maximize: max
+            }
+        });
     }
 
     return (
@@ -87,8 +145,12 @@ function HomePage() {
            <NavigationBar/>
            {appConfig.finder?.open &&
            <Draggable>
-               <div className={`${style.Finder} ${appConfig.finder?.onTop ? style.OnTop : style.OnBottom}`}>
-                   <Finder/>
+               <div className={
+                   `${style.Finder} 
+                   ${appConfig.finder?.onTop ? style.OnTop : style.OnBottom} 
+                   ${appConfig.finder?.minimize ? style.Minimize : ''}
+                   ${appConfig.finder.maximize ? style.Maximize : ''}`}>
+                   <Finder closeApp={closeApp} minimizeApp={minimizeApp} maximizeApp={maximizeApp}/>
                </div>
            </Draggable>}
            {appConfig.mail?.open &&
