@@ -16,7 +16,7 @@ function Finder(props: {
     closeApp: (App : Apps) => void,
     minimizeApp: (App:Apps) => void,
     maximizeApp: (App:Apps) => void}) {
-    const [selectedTab, setSelectedTab] = useState<string | null>('application');
+    const [selectedTab, setSelectedTab] = useState<string | null>('movies');
     const [expandIcon, setExpandIcon] = useState(true);
 
     function handleExpand(){
@@ -46,7 +46,7 @@ function Finder(props: {
             </Row>
             <Row className={style.FinderContent}>
                 <Col sm={12}>
-                    <Tab.Container id="find-list-tabs" onSelect={(eventKey) => {setSelectedTab(eventKey)}} defaultActiveKey="application">
+                    <Tab.Container id="find-list-tabs" onSelect={(eventKey) => {setSelectedTab(eventKey)}} defaultActiveKey="movies">
                         <Row  className={style.Content}>
                             <Col sm={3} className={style.SideBar}>
                                 <br/>
@@ -86,7 +86,7 @@ function Finder(props: {
                                         <Movies/>
                                     </Tab.Pane>
                                     <Tab.Pane eventKey="document">
-                                        Documents
+                                        <Documents/>
                                     </Tab.Pane>
                                     <Tab.Pane eventKey="others">
                                         Others

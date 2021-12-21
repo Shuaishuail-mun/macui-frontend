@@ -1,40 +1,33 @@
 import MovieCarousel from "./MovieCarousel";
 import {Container} from "react-bootstrap";
 import {CardGroup, Card, Row, Col} from 'react-bootstrap';
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faStar} from "@fortawesome/free-solid-svg-icons";
 import style from '../../style/scss/movies.module.scss';
+import AntMan from '../../style/images/movies/ant-man.jpeg';
+import Avatar from '../../style/images/movies/Avatar.jpeg';
+import BabyDriver from '../../style/images/movies/BABY-Driver.jpeg';
+import Dune from '../../style/images/movies/Dune.jpeg';
+import HouseGucci from '../../style/images/movies/House-of-Gucci.jpeg';
+import Incredible from '../../style/images/movies/Incredibles.jpeg';
+import Joker from '../../style/images/movies/Joker.jpeg';
+import Mermaid from '../../style/images/movies/Mermaid.jpeg';
+import Moonlight from '../../style/images/movies/MoonLight.jpeg';
+import SpiritAway from '../../style/images/movies/spirited-away.jpeg';
+import Matrix from '../../style/images/movies/The-Matrix.jpeg';
+import Titanic from '../../style/images/movies/Titanic.jpeg';
 
-const images = [
-    "https://images.unsplash.com/photo-1549989476-69a92fa57c36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-    "https://images.unsplash.com/photo-1549396535-c11d5c55b9df?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
-    "https://images.unsplash.com/photo-1550133730-695473e544be?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-    "https://images.unsplash.com/photo-1550167164-1b67c2be3973?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-    "https://images.unsplash.com/photo-1550338861-b7cfeaf8ffd8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-    "https://images.unsplash.com/photo-1550223640-23097fc71cb2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-    "https://images.unsplash.com/photo-1550353175-a3611868086b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-    "https://images.unsplash.com/photo-1550330039-a54e15ed9d33?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-    "https://images.unsplash.com/photo-1549737328-8b9f3252b927?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-    "https://images.unsplash.com/photo-1549833284-6a7df91c1f65?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-    "https://images.unsplash.com/photo-1549985908-597a09ef0a7c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-    "https://images.unsplash.com/photo-1550064824-8f993041ffd3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
-];
+
+const images = [AntMan, Avatar, BabyDriver, Dune, HouseGucci, Incredible, Joker, Mermaid, Moonlight, SpiritAway, Matrix, Titanic];
 
 function Movies() {
     let movies = images.map((link, index) =>
         <Col xs={12} md={6} lg={4}>
             <Card>
                 <Card.Img variant="top" src={link} />
-                <Card.Body>
-                    <Card.Title>
-                        title
-                    </Card.Title>
-                    <Card.Text>
-                        <small>
-                            This is a w as a natural
-                        </small>
-                    </Card.Text>
-                </Card.Body>
                 <Card.Footer>
-                    <small className="text-muted">Last updated</small>
+                    <FontAwesomeIcon className="me-2" style={{color: "#f5c519"}} icon={faStar}/>
+                    <small className="text-muted">7.{index}</small>
                 </Card.Footer>
             </Card>
             <br/>
