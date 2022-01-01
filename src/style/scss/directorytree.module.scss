@@ -1,8 +1,21 @@
 .BgGrey{
-  background-color: rgba(203, 203, 203, 0.34);
+  background-color: rgba(203, 203, 203, 0.16);
   border-radius: 2px;
 }
 .BgGreyer{
   border-radius: 2px;
-  background-color: rgba(203, 203, 203, 0.28);
+  background-color: rgba(203, 203, 203, 0.15);
+}
+.BlueFolder{
+  color: rgba(64, 186, 252, 0.71);
+}
+.PDF{
+  color: rgba(239, 36, 36, 0.84);
+}
+.Word{
+  color: rgba(21, 54, 129, 0.82);
+}
+.Arrow{
+  width: 0.8em;
+  height: 0.8em;
 }

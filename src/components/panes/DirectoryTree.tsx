@@ -1,53 +1,11 @@
 import style from '../../style/scss/directorytree.module.scss';
-import {faChevronRight, faChevronDown, faTimes} from "@fortawesome/free-solid-svg-icons";
+import {faChevronRight, faChevronDown, faFolder} from "@fortawesome/free-solid-svg-icons";
+import {faFilePdf, faFileWord} from "@fortawesome/free-regular-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {useState} from "react";
 import {Directory} from './Documents';
 
-interface DirSetting{
-    [key: string]: boolean;
-}
-const documents = [
-    {
-        files: [
-            {
-                files: ['dir1-dir1-file1.txt', 'dir1-dir1-file2.txt'],
-                open: false,
-                name: "directory1-1"
-            } as Directory,
-            'dir1-file1.txt',
-            {
-                files: ['dir1-dir2-file1.txt', 'dir1-dir2-file2.txt'],
-                open: false,
-                name: "directory1-2"
-            } as Directory,
-            'dir1-file2.txt'
-        ],
-        open: false,
-        name: "directory1"
-    } as Directory,
-    'file1.txt',
-    {
-        files: [
-            {
-                files: ['dir2-dir1-file1.txt', 'dir2-dir1-file2.txt'],
-                open: false,
-                name: "directory2-1"
-            } as Directory,
-            'dir2-file1.txt',
-            {
-                files: ['dir2-dir2-file1.txt', 'dir2-dir2-file2.txt'],
-                open: false,
-                name: "directory2-2"
-            } as Directory,
-            'dir2-file2.txt'
-        ],
-        open: false,
-        name: "directory2"
-    } as Directory,
-    'file2.txt',
-    'file3.txt'
-]
+
 function DirectoryTree(props: {
     itemList: any[]
 }){
@@ -55,18 +13,25 @@ function DirectoryTree(props: {
 
     let itemListDisplay = itemList.map((item:Directory|string, index) => {
         return (typeof item === "string") ?
-            <li className={style.BgGreyer}>{item}</li>
+            <li className={style.BgGreyer}>
+                {(item.split('.').pop() === 'pdf') &&
+                <FontAwesomeIcon className={`${style.PDF} ms-3 me-1`} icon={faFilePdf}/>}
+                {(item.split('.').pop() !== 'pdf') &&
+                <FontAwesomeIcon className={`${style.Word} ms-3 me-1`} icon={faFileWord}/>}
+                {item}
+            </li>
             :
             <li className={style.BgGrey}>
                 {item.open &&
-                <FontAwesomeIcon className="me-1" onClick={() => closeDir(index)} icon={faChevronDown}/>
+                <FontAwesomeIcon className={`${style.Arrow} me-1`} onClick={() => closeDir(index)} icon={faChevronDown}/>
                 }
                 {(!item.open) &&
-                <FontAwesomeIcon className="me-1" onClick={() => openDir(index)} icon={faChevronRight}/>
+                <FontAwesomeIcon className={`${style.Arrow} me-1`} onClick={() => openDir(index)} icon={faChevronRight}/>
                 }
+                <FontAwesomeIcon className={`${style.BlueFolder} me-1`} icon={faFolder}/>
                 {item.name}
                 {item.open &&
-                    <ul>
+                    <ul className="ms-3">
                         <DirectoryTree itemList={item.files}/>
                     </ul>
                 }

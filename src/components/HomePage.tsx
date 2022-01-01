@@ -155,8 +155,12 @@ function HomePage() {
            </Draggable>}
            {appConfig.mail?.open &&
            <Draggable>
-               <div className={`${style.Mail} ${appConfig.mail?.onTop ? style.OnTop : style.OnBottom}`}>
-                   <Mail/>
+               <div className={
+                   `${style.Mail} 
+                   ${appConfig.mail?.onTop ? style.OnTop : style.OnBottom}
+                   ${appConfig.mail?.minimize ? style.Minimize : ''}
+                   ${appConfig.mail.maximize ? style.Maximize : ''}`}>
+                   <Mail closeApp={closeApp} minimizeApp={minimizeApp} maximizeApp={maximizeApp}/>
                </div>
            </Draggable>}
            {appConfig.music?.open &&

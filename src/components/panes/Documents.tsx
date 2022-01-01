@@ -1,5 +1,5 @@
 import style from '../../style/scss/documents.module.scss';
-import {faChevronRight, faChevronDown, faTimes} from "@fortawesome/free-solid-svg-icons";
+import {faChevronRight, faChevronDown, faFolder, faFileAlt} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import DirectoryTree from "./DirectoryTree";
 import {Container, Row, Col} from 'react-bootstrap';
@@ -14,21 +14,21 @@ interface DirSetting{
     [key: string]: boolean;
 }
 const documents = [
-    'file1.txt',
+    'file1.pdf',
     {
         files: [
             {
-                files: ['dir1-dir1-file1.txt', 'dir1-dir1-file2.txt'],
+                files: ['dir1-dir1-file1.pdf', 'dir1-dir1-file2.word'],
                 open: false,
                 name: "directory1-1"
             } as Directory,
-            'dir1-file1.txt',
+            'dir1-file1.word',
             {
-                files: ['dir1-dir2-file1.txt', 'dir1-dir2-file2.txt'],
+                files: ['dir1-dir2-file1.pdf', 'dir1-dir2-file2.pdf'],
                 open: true,
                 name: "directory1-2"
             } as Directory,
-            'dir1-file2.txt'
+            'dir1-file2.word'
         ],
         open: true,
         name: "directory1"
@@ -36,36 +36,36 @@ const documents = [
     {
         files: [
             {
-                files: ['dir2-dir1-file1.txt', 'dir2-dir1-file2.txt'],
+                files: ['dir2-dir1-file1.pdf', 'dir2-dir1-file2.pdf'],
                 open: true,
                 name: "directory2-1"
             } as Directory,
-            'dir2-file1.txt',
+            'dir2-file1.word',
             {
-                files: ['dir2-dir2-file1.txt', 'dir2-dir2-file2.txt'],
+                files: ['dir2-dir2-file1.pdf', 'dir2-dir2-file2.pdf'],
                 open: false,
                 name: "directory2-2"
             } as Directory,
-            'dir2-file2.txt'
+            'dir2-file2.word'
         ],
         open: true,
         name: "directory2"
     } as Directory,
-    'file2.txt',
+    'file2.word',
     {
         files: [
             {
-                files: ['dir3-dir1-file1.txt', 'dir3-dir1-file2.txt'],
+                files: ['dir3-dir1-file1.pdf', 'dir3-dir1-file2.pdf'],
                 open: false,
                 name: "directory3-1"
             } as Directory,
-            'dir2-file1.txt',
+            'dir2-file1.pdf',
             {
-                files: ['dir3-dir2-file1.txt', 'dir3-dir2-file2.txt'],
+                files: ['dir3-dir2-file1.pdf', 'dir3-dir2-file2.pdf'],
                 open: false,
                 name: "directory3-2"
             } as Directory,
-            'dir3-file2.txt'
+            'dir3-file2.pdf'
         ],
         open: false,
         name: "directory3"

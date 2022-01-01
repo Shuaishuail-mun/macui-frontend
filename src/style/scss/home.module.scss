@@ -32,8 +32,8 @@
     @extend %AppWindow;
     left: 12%;
     top: 14%;
-    min-width: 800px;
-    min-height: 500px;
+    width: 800px;
+    height: 500px;
   }
   .Music{
     @extend %AppWindow;

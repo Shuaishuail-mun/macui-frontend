@@ -1,0 +1,28 @@
+.EmailList{
+  height: 100%;
+  .SideBar{
+    height: calc(100% - 3px);
+    overflow-y: scroll;
+    .EmailDate{
+      font-size: 0.7em;
+    }
+    .EmailRead{
+      font-size: 0.3em;
+      color: #1774ce;
+    }
+    .Item{
+      padding-left: 0;
+    }
+    .FromName{
+      font-weight: 800;
+      font-size: 0.9em;
+    }
+    .Title{
+      font-weight: 600;
+      font-size: 0.8em;
+    }
+    .Content{
+      font-size: 0.7em;
+    }
+  }
+}
