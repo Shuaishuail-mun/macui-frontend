@@ -1,6 +1,19 @@
-# Getting Started with Create React App
-
+# Mimicking Mac UI
+This project aims to Emulate the user interface of Mac system. It is written in the language [TypeScript](https://www.typescriptlang.org/) with the library [React](https://reactjs.org/).
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## WebPages
+The following example pages show what the site looks like:
+### The login page
+this page is used to type in the password. <img width="881" alt="Screen Shot 2022-01-16 at 3 26 18 AM" src="https://user-images.githubusercontent.com/57474978/149650473-dbba8642-d386-4bc5-8050-1db96441907b.png">
+### Finder Application
+<img width="733" alt="Screen Shot 2022-01-16 at 3 30 44 AM" src="https://user-images.githubusercontent.com/57474978/149650626-19d04e5c-dc75-4700-9c69-1614ff50e270.png">
+<img width="751" alt="Screen Shot 2022-01-16 at 3 32 03 AM" src="https://user-images.githubusercontent.com/57474978/149650641-66dee21b-4fda-497d-8f11-cc1cc51f5291.png">
+
+### Email Application
+<img width="924" alt="Screen Shot 2022-01-16 at 3 33 39 AM" src="https://user-images.githubusercontent.com/57474978/149650667-76436b35-6fef-4d1d-9fdf-0e28326f19b5.png">
+
+### Terminal
+<img width="740" alt="Screen Shot 2022-01-16 at 3 34 49 AM" src="https://user-images.githubusercontent.com/57474978/149650702-dbc6fa4d-546a-4ece-bee2-f96042c56b70.png">
 
 ## Available Scripts
 
@@ -29,42 +42,3 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
