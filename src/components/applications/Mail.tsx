@@ -16,7 +16,8 @@ export interface Email{
     title: string,
     content: string,
     date: Date,
-    read: boolean
+    read: boolean,
+    detail: string
 }
 enum TabOption {
     inbox,
@@ -36,7 +37,8 @@ const emailData:EmailTypes = {
             title: 'Go simple, mobile, and integrated. Just US$9.99/mo.',
             content: 'Acrobat Pro DC does more than ever for 30% less.',
             date: new Date(),
-            read: false
+            read: false,
+            detail: 'example-emails/havana.html'
         },
         {
             fromName: 'no-reply@docker.com',
@@ -44,7 +46,8 @@ const emailData:EmailTypes = {
             title: 'Last chance to save 15% on a Docker subscription!',
             content: 'Act before December 31st and save 15% on a Docker Team or Docker Business subscription. Docker subscriptions provide the productivity and collaboration developers rely on with the scale and security businesses demand.',
             date: new Date(),
-            read: true
+            read: true,
+            detail: '/example-emails/portland.html'
         },
         {
             fromName: 'Netflix',
@@ -52,7 +55,8 @@ const emailData:EmailTypes = {
             title: 'A new device is using your account',
             content: 'A new device signed in to your Netflix account, If this was you or someone in your household:',
             date: new Date(),
-            read: false
+            read: false,
+            detail: '/example-emails/seoul.html'
         },
         {
             fromName: 'Glassdoor Jobs',
@@ -60,7 +64,8 @@ const emailData:EmailTypes = {
             title: 'Machine Learning Engineer',
             content: 'New jobs for Software Developer, HIGHLY RATED: Career Opportunity, Compensation & Benefits, Work/Life Balance, Culture & Values, Senior Leadership',
             date: new Date(),
-            read: false
+            read: false,
+            detail: '/example-emails/zagreb.html'
         },
         {
             fromName: 'Adobe Acrobat',
@@ -68,7 +73,8 @@ const emailData:EmailTypes = {
             title: 'Go simple, mobile, and integrated. Just US$9.99/mo.',
             content: 'Acrobat Pro DC does more than ever for 30% less.',
             date: new Date(),
-            read: false
+            read: false,
+            detail: 'example-emails/portland.html'
         },
         {
             fromName: 'no-reply@docker.com',
@@ -76,7 +82,8 @@ const emailData:EmailTypes = {
             title: 'Last chance to save 15% on a Docker subscription!',
             content: 'Act before December 31st and save 15% on a Docker Team or Docker Business subscription. Docker subscriptions provide the productivity and collaboration developers rely on with the scale and security businesses demand.',
             date: new Date(),
-            read: true
+            read: true,
+            detail: 'example-emails/helsinki.html'
         },
         {
             fromName: 'Netflix',
@@ -84,7 +91,8 @@ const emailData:EmailTypes = {
             title: 'A new device is using your account',
             content: 'A new device signed in to your Netflix account, If this was you or someone in your household:',
             date: new Date(),
-            read: false
+            read: false,
+            detail: 'example-emails/kiev.html'
         },
         {
             fromName: 'Glassdoor Jobs',
@@ -92,27 +100,30 @@ const emailData:EmailTypes = {
             title: 'Machine Learning Engineer',
             content: 'New jobs for Software Developer, HIGHLY RATED: Career Opportunity, Compensation & Benefits, Work/Life Balance, Culture & Values, Senior Leadership',
             date: new Date(),
-            read: false
+            read: false,
+            detail: 'example-emails/seoul.html'
         },
     ],
     [TabOption.flagged]: [
         {
-            fromName: 'flagged1',
-            fromAddress: 'flaggedaddress1',
-            title: 'flagged1',
-            content: 'flagged1',
+            fromName: 'CELPIP Test',
+            fromAddress: 'info@paragontesting.ca',
+            title: 'CELPIP-General Test',
+            content: 'CELPIP-General Test Confirmation',
             date: new Date(),
-            read: false
+            read: true,
+            detail: 'example-emails/monaco.html'
         }
     ],
     [TabOption.sent]: [
         {
-            fromName: 'sent1',
-            fromAddress: 'sentaddress1',
-            title: 'sent1',
-            content: 'sent1',
+            fromName: 'Kate',
+            fromAddress: 'Kate@gmail.com',
+            title: 'Contact Information List',
+            content: 'Here is my email, I you could kindly send me',
             date: new Date(),
-            read: false
+            read: false,
+            detail: 'example-emails/lisbon.html'
         }
     ],
 };

@@ -3,6 +3,7 @@ import {ListGroup, Badge, Row, Col} from "react-bootstrap";
 import style from '../../style/scss/emaillist.module.scss';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faCircle} from "@fortawesome/free-solid-svg-icons";
+import {useState} from "react";
 
 enum WeekDays{
     Monday,
@@ -17,11 +18,27 @@ enum WeekDays{
 function EmailList(props: {
     emailList: Email[]
 }){
-    let list = props.emailList.map((item) =>
-        <ListGroup.Item as="li" className={style.Item}>
+    const [email, setEmail] = useState<Email>(props.emailList[0]);
+    const [emailList, setEmailList] = useState<Email[]>(props.emailList);
+
+    function readEmail(item: Email, index:number){
+        setEmail(item);
+        let newItemList = Object.assign([...emailList], {
+            [index]: {
+                ...emailList[index],
+                read: true
+            }
+        });
+        setEmailList(newItemList);
+    }
+
+    let list = emailList.map((item, index) =>
+        <ListGroup.Item onClick={() => readEmail(item, index)} as="li" className={style.Item}>
             <Row className="d-flex align-items-center">
                 <Col className={style.EmailRead} xs={1}>
-                    <FontAwesomeIcon icon={faCircle}/>
+                    {(!item.read) &&
+                        <FontAwesomeIcon icon={faCircle}/>
+                    }
                 </Col>
                 <Col className={`${style.FromName} text-truncate`}>
                     {item.fromName}
@@ -49,8 +66,24 @@ function EmailList(props: {
                     <ListGroup.Item></ListGroup.Item>
                 </ListGroup>
             </Col>
-            <Col xs={7}>
-                <div dangerouslySetInnerHTML={{ __html: "<iframe src='' />"}} />
+            <Col className={style.EmailDisplay}>
+                <Row>
+                    <Col className={style.Badge} xs={1}>
+                        <Badge pill bg="secondary">
+                            {email.fromName.charAt(0)}
+                        </Badge>
+                    </Col>
+                    <Col xs={8}>
+                        <Row className={style.FromName}>{email.fromName}</Row>
+                        <Row className={`${style.Title}`}>
+                            {email.title}
+                        </Row>
+                        <Row className={style.FromAddress}>From: {email.fromAddress}</Row>
+                    </Col>
+                    <Col className={style.Date} xs={2}>{WeekDays[email.date.getDay()]}</Col>
+                </Row>
+                <hr/>
+                <Row className={style.Detail} dangerouslySetInnerHTML={{ __html: `<iframe scrolling="no" width='100%' style='height:250vh;' src=${process.env.PUBLIC_URL + email.detail} />`}} />
             </Col>
         </Row>
     );

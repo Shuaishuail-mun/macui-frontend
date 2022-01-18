@@ -32,7 +32,7 @@
     @extend %AppWindow;
     left: 12%;
     top: 14%;
-    width: 800px;
+    width: 900px;
     height: 500px;
   }
   .Music{
@@ -60,8 +60,8 @@
     @extend %AppWindow;
     left: 15%;
     top: 15%;
-    min-width: 500px;
-    min-height: 400px;
+    width: 600px;
+    height: 450px;
   }
   .Twitter{
     @extend %AppWindow;

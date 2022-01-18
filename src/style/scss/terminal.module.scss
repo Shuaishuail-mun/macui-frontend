@@ -1,0 +1,115 @@
+$green: #1ff042;
+%WindowSizeBtn {
+  width: 14px;
+  height: 14px;
+  padding: 2px;
+  border-radius: 50%;
+  border: rgba(0, 0, 0, 0.2) solid 0.5px;
+}
+
+.Terminal{
+  height: 100%;
+  .TopBar{
+    border-top: white solid 1px;
+    background: linear-gradient(#F8F8F8, #E1E1E1);
+    border-radius: 5px 5px 0px 0px;
+    border-bottom: rgba(0, 0, 0, 0.3) solid 0.5px;
+    height:30px;
+    .WindowBtns{
+      color: transparent;
+      &:hover{
+        color:black;
+      }
+      .BtnClose{
+        @extend %WindowSizeBtn;
+        background: #FF5F57;
+      }
+      .BtnMinimize{
+        @extend %WindowSizeBtn;
+        background: #FFBD2E;
+      }
+      .BtnMaximize{
+        @extend %WindowSizeBtn;
+        background: #28CA41;
+      }
+    }
+    .Folder{
+      color: rgba(23, 127, 229, 0.76);
+    }
+  }
+  .ConsoleArea{
+    height: calc(100% - 30px);
+    background-color: #1F1F1F;
+    color: $green;
+    font-family: Menlo;
+    overflow-y: auto;
+    .CommandArea{
+      .Prompt {
+        display: inline-block;
+        &:before {
+          content: '>';
+          display: inline-block;
+        }
+        &:after {
+          display: inline-block;
+          font-weight: 1000;
+          font-size: 1em;
+          content: '|';
+          -webkit-animation: 1s cursor-blink step-end infinite;
+          -moz-animation: 1s cursor-blink step-end infinite;
+          -ms-animation: 1s cursor-blink step-end infinite;
+          -o-animation: 1s cursor-blink step-end infinite;
+          animation: 1s cursor-blink step-end infinite;
+        }
+        @keyframes cursor-blink {
+          from, to {
+            color: transparent;
+          }
+          50% {
+            color: $green;
+          }
+        }
+        @-moz-keyframes cursor-blink {
+          from, to {
+            color: transparent;
+          }
+          50% {
+            color: $green;
+          }
+        }
+        @-webkit-keyframes cursor-blink {
+          from, to {
+            color: transparent;
+          }
+          50% {
+            color: $green;
+          }
+        }
+        @-ms-keyframes cursor-blink {
+          from, to {
+            color: transparent;
+          }
+          50% {
+            color: black;
+          }
+        }
+
+        @-o-keyframes cursor-blink {
+          from, to {
+            color: transparent;
+          }
+          50% {
+            color: black;
+          }
+        }
+      }
+      .Input{
+        display: inline-block;
+        opacity: 0;
+        width: 80%;
+        background-color: #f5d6d6;
+      }
+    }
+
+  }
+}

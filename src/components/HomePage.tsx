@@ -183,8 +183,13 @@ function HomePage() {
            </Draggable>}
            {appConfig.terminal?.open &&
            <Draggable>
-               <div className={`${style.Terminal} ${appConfig.terminal?.onTop ? style.OnTop : style.OnBottom}`}>
-                   <Terminal/>
+               <div
+                   className={
+                    `${style.Terminal}
+                    ${appConfig.terminal?.onTop ? style.OnTop : style.OnBottom}
+                    ${appConfig.terminal?.minimize ? style.Minimize : ''}
+                    ${appConfig.terminal.maximize ? style.Maximize : ''}`}>
+                   <Terminal closeApp={closeApp} minimizeApp={minimizeApp} maximizeApp={maximizeApp}/>
                </div>
            </Draggable>}
            {appConfig.twitter?.open &&
